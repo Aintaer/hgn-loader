@@ -39,6 +39,7 @@ function hgn(source) {
   return `var Hogan = require("hogan.js"),
   preloads = {${toLoad.join(',')}},
   template = new Hogan.Template(${Hogan.compile(source, { asString: true })}, ${JSON.stringify(text)}, Hogan);
+  function extend(target, source) { return Object.keys(source).reduce(function(t, p) { t[p] = source[p]; return t; }, Object.create(target)); }
   template.ri = function(context, partials, indent) {
     return this.r(context, extend(preloads, partials), indent);
   };
