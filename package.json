@@ -1,9 +1,10 @@
 {
   "name": "hgn-loader",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Partial resolving mustache template loader for Webpack",
   "main": "index.js",
   "scripts": {
+    "prepublish": "babel src/index.js -o index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,10 +16,20 @@
     "mustache",
     "webpack"
   ],
-  "author": "Alex Lee",
+  "author": "Alex Lee <aintaer@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Aintaer/hgn-loader/issues"
   },
-  "homepage": "https://github.com/Aintaer/hgn-loader#readme"
+  "homepage": "https://github.com/Aintaer/hgn-loader#readme",
+  "peerDependencies": {
+    "hogan.js": "^3.0.2"
+  },
+  "dependencies": {
+    "hogan.js": "^3.0.2",
+    "loader-utils": "^0.2.10"
+  },
+  "devDependencies": {
+    "babel": "^5.6.14"
+  }
 }
